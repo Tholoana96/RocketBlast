@@ -15,7 +15,7 @@ Rocket Blast is a responsive space shooter game built with **HTML, CSS, and Java
 ## 🖥️ Play Online
 
 Play the game online now:  
-[Play Rocket Blast]https://tholoana96.github.io/RocketBlast/
+[https://tholoana96.github.io/RocketBlast/]
 
 ## 🛠️ Technologies Used
 
