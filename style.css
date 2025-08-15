@@ -33,13 +33,14 @@ html {
 
 #ship {
   position: absolute;
-  bottom: 5vh;
+  top: calc(100% - 15vh);
   left: 50%;
   transform: translateX(-50%) rotate(-45deg);
 }
 
 #ship img {
   width: 12vw;
+  max-height: 12vh;
   height: auto;
 }
 
