@@ -147,10 +147,23 @@ function endGame() {
   gameRunning = false;
   gameOverDisplay.style.display = "block";
   restartDiv.style.display = "block";
-  restartDiv.addEventListener("click", () => {
-    location.reload();
-  });
 }
+
+function resetGame() {
+  score = 0;
+  scoreDisplay.textContent = "Score: 0";
+  gameRunning = true;
+  document
+    .querySelectorAll(".asteroid, .explosion")
+    .forEach((el) => el.remove());
+  gameOverDisplay.style.display = "none";
+  restartDiv.style.display = "none";
+  bullet.style.display = "none";
+  targetShipLeft = window.innerWidth / 2;
+  ship.style.left = targetShipLeft + "px";
+}
+
+restartDiv.addEventListener("click", resetGame);
 
 setInterval(createAsteroid, 1500);
 createStars(150);
