@@ -1,0 +1,80 @@
+body,
+html {
+  margin: 0;
+  overflow: hidden;
+  touch-action: none;
+  overscroll-behavior: none;
+  background-color: black;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+#game-board {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+}
+
+#ship {
+  position: absolute;
+  bottom: 5vh;
+  left: 50%;
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+#ship img {
+  width: 12vw;
+  height: auto;
+}
+
+#bullet {
+  position: absolute;
+  width: 1.5vw;
+  height: 5vh;
+  background-color: orange;
+  border-radius: 5px;
+  display: none;
+}
+
+.asteroid {
+  position: absolute;
+  width: 8vw;
+}
+
+.explosion {
+  position: absolute;
+  width: 8vw;
+}
+
+#score {
+  position: absolute;
+  top: 1vh;
+  left: 1vw;
+  font-size: 5vw;
+}
+
+#game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10vw;
+  color: red;
+  text-align: center;
+}
