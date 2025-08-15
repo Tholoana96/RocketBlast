@@ -90,6 +90,7 @@ html {
   padding: 1vw 2vw;
   color: white;
   cursor: pointer;
+  user-select: none;
 }
 
 @media (max-width: 768px) {
@@ -101,5 +102,11 @@ html {
   #score {
     top: env(safe-area-inset-top, 5vh);
     font-size: 6vw;
+  }
+
+  #restart {
+    top: 70%;
+    font-size: 7vw;
+    padding: 2vw 4vw;
   }
 }
