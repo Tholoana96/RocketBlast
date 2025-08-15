@@ -70,13 +70,26 @@ html {
 }
 
 #game-over {
+  display: none;
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 10vw;
   color: red;
   text-align: center;
+}
+
+#restart {
+  display: none;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5vw;
+  padding: 1vw 2vw;
+  color: white;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {

@@ -146,6 +146,11 @@ function moveAsteroids() {
 function endGame() {
   gameRunning = false;
   gameOverDisplay.style.display = "block";
+  const restartDiv = document.getElementById("restart");
+  restartDiv.style.display = "block";
+  restartDiv.addEventListener("click", () => {
+    location.reload();
+  });
 }
 
 setInterval(createAsteroid, 1500);
