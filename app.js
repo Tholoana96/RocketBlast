@@ -4,6 +4,7 @@ const asteroidsContainer = document.querySelector("#asteroids");
 const gameBoard = document.querySelector("#game-board");
 const scoreDisplay = document.getElementById("score");
 const gameOverDisplay = document.getElementById("game-over");
+const restartDiv = document.getElementById("restart");
 
 let targetShipLeft = window.innerWidth / 2;
 let moveSpeed = 15;
@@ -11,6 +12,9 @@ let asteroidSpeed = 1.5;
 let score = 0;
 let gameRunning = true;
 let bulletTop = 0;
+
+gameOverDisplay.style.display = "none";
+restartDiv.style.display = "none";
 
 function createStars(num = 150) {
   const starsContainer = document.getElementById("stars");
@@ -51,7 +55,6 @@ window.addEventListener("touchmove", (e) => {
 });
 
 window.addEventListener("click", fireBullet);
-
 window.addEventListener("touchstart", fireBullet);
 
 function animateShip() {
@@ -111,7 +114,6 @@ function explode(ast) {
   explosion.style.left = ast.style.left;
   explosion.style.top = ast.style.top;
   gameBoard.appendChild(explosion);
-
   setTimeout(() => explosion.remove(), 500);
   ast.remove();
 }
@@ -131,11 +133,9 @@ function moveAsteroids() {
   document.querySelectorAll(".asteroid").forEach((ast) => {
     const top = parseFloat(ast.style.top);
     ast.style.top = top + asteroidSpeed + "px";
-
     if (isColliding(ast, ship)) {
       endGame();
     }
-
     if (top > window.innerHeight) {
       ast.remove();
     }
@@ -145,17 +145,13 @@ function moveAsteroids() {
 
 function endGame() {
   gameRunning = false;
-
   gameOverDisplay.style.display = "block";
-  const restartDiv = document.getElementById("restart");
   restartDiv.style.display = "block";
-
   restartDiv.addEventListener("click", () => {
     location.reload();
   });
 }
 
 setInterval(createAsteroid, 1500);
-
 createStars(150);
 moveAsteroids();
